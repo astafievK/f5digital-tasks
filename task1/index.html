@@ -10,68 +10,69 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
 
     <title>Task1</title>
 </head>
 <body>
     <div class="container main_screen">
-        <div class="row"><h1>Bring it all together</h1></div>
+        <span class="row"><h1>Bring it all together</h1></span>
             
-        <div class="row"><h2>The fastest way to combine your favorite tools and APIs to build the<br>fastest sites, stores, and apps for the web.</h2></div>
+        <span class="row"><h2>The fastest way to combine your favorite tools and APIs to build the<br>fastest sites, stores, and apps for the web.</h2></span>
         
         <div class="container form">
             <div class="form_content">
                 <div class="row">
-                    <div class="form_check col-md-4">
-                        <input class="form_check_input" type="checkbox" value="" id="formCheckBoxNew">
-                        <label class="form_check_label" for="formCheckBoxNew">новинки 2023</label>
-                    </div>
+                    <form class="form_check col-md-4">
+                        <div>
+                            <label class="form_check_label" for="formCheckBoxNew"><input class="form_elem" type="checkbox" id="formCheckBoxNew">новинки 2023</label>
+                        </div>
+                    </form>
 
-                    <div class="form_check col-md-4">
-                        <input class="form_check_input" type="checkbox" value="" id="formCheckIsStock">
-                        <label class="form_check_label" for="formCheckBoxIsStock">в наличии</label>
-                    </div>
-                    
+                    <form class="form_check col-md-4">
+                        <div>
+                            <label class="form_check_label" for="formCheckBoxIsStock"><input class="form_elem" type="checkbox" id="formCheckBoxIsStock">в наличии</label>
+                        </div>
+                    </form>
+
                     <div class="offset-2 col-md-2">
-                        <button class="cancel_button">сбросить</button>
+                        <button class="clear_button" id="clearButton">сбросить</button>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="input-group">
-                        <input type="text" class="form_search_input" placeholder="Поиск по ключевым словам..">
+                        <input type="text" class="form_elem" id="formSearch" placeholder="Поиск по ключевым словам ...">
                     </div>
                 </div>
-                
-                <div class="row">
-                    <div class="input_group_lists">
 
-                    </div>
+                <div class="row input_group_lists">
                     <div class="col-md-4">
-                        <select id="inputState" class="form-select">
-                          <option selected>Цвет</option>
-                          <option>Синий</option>
-                          <option>Фиолетовый</option>
+                        <select class="form_elem form_select">
+                          <option class="select_item" selected disabled value="def">Цвет</option>
+                          <option class="select_item" value="blue">Синий</option>
+                          <option class="select_item" value="purple">Фиолетовый</option>
                         </select>
                     </div>
 
                     <div class="col-md-4">
-                        <select id="inputState" class="form-select" title="Размер">
-                          <option selected>Размер</option>
-                          <option>Большой</option>
-                          <option>Средний</option>
-                          <option>Маленький</option>
+                        <select class="form_elem form_select" title="Размер">
+                            <option class="select_item" selected disabled value="def">Размер</option>
+                            <option class="select_item" value="big">Большой</option>
+                            <option class="select_item" value="medium">Средний</option>
+                            <option class="select_item" value="small">Маленький</option>
                         </select>
                     </div>
 
                     <div class="col-md-4">
                         <button class="submit_button">Применить фильтр</button>
-                    </div>                    
+                    </div>
                 </div>
-
             </div>           
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

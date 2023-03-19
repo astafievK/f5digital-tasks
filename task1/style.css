@@ -1,6 +1,13 @@
 *{
     font-family: 'Roboto', sans-serif;
     font-style: normal;
+    margin: 0;
+    background: none;
+    border: none;
+}
+
+input{
+    outline: 0;
 }
 
 h1, h2{
@@ -11,14 +18,14 @@ h1, h2{
 h1{
     font-weight: 400;
     font-size: 62px;
-    line-height: 73px;   
+    line-height: 73px;
+    padding-bottom: 24px;
 }
 
 h2{
     font-weight: 300;  
     font-size: 33px;
-    line-height: 36px;
-    margin-top: 24px;
+    line-height: 36px;    
 }
 
 .main_screen{
@@ -27,8 +34,7 @@ h2{
 
 .form{
     margin-top: 60px;
-    border: 2px solid;
-    border-color: #3F5EFF;
+    border: 2px solid #3F5EFF;
     border-radius: 10px;
     width: 720px;
     height: 234px; 
@@ -40,14 +46,19 @@ h2{
     display: block;
 }
 
-.form_check_input{
+input[type="checkbox"]{
+    outline: 0;
     width: 20px;
     height: 20px;
     background: #F4F6F9;
+    border: 1px solid gray;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-right: 12px;
 }
 
-.form_check_input:hover:active{
-    border: 1px solid #052842;
+input[type="checkbox"]:hover{
+    border: 3px solid red;
     transition: all 0.4s ease;
 }
 
@@ -58,21 +69,23 @@ h2{
     color: #000000;
     flex: none;
     order: 1;
-    vertical-align:middle;
-    margin-left: 12px;
+    vertical-align: middle;
 }
 
-.cancel_button{
+
+.clear_button{
+    display: block;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
     text-align: right;
     color: #FF8484;
-    background: #FFFFFF;
+    background: none;
     border: none;
+    height: 20px;
 }
 
-.form_search_input{
+input[type="text"]{
     display: flex;
     height: 52px;
     width: 100%;
@@ -86,22 +99,22 @@ h2{
     align-items: center;
     padding: 16px 54px 16px 16px;
     gap: 12px;
+    outline: none;
 
     transition: all 0.4s ease;
 }
 
-.form_search_input:hover{
+input[type="text"]:hover{
     border: 1px solid #212121;
 
     transition: all 0.4s ease;
 }
 
-.form_search_input:focus{
-    outline: none !important;
+input[type="text"]:focus{
     border: 1px solid #212121;
 }
 
-.form_search_input:disabled{
+input[type="text"]:disabled{
     border: 1px solid #BEBEBE;
 }
 
@@ -114,15 +127,17 @@ h2{
     height: 51.98px;
     border: 1px solid #BEBEBE;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    
 }
 
-.form-select, .submit_button{
+.form_select, .submit_button{
     height: 51.98px;
 }
 
 .submit_button{
     border: none;
-    width: 100%;
     background: #19980E;
     border-radius: 10px;
     font-weight: 700 !important;
@@ -130,6 +145,7 @@ h2{
     line-height: 21px;
     color: #FFFFFF;
     transition: all 0.4s ease;
+    width: 227px;
 }
 
 .submit_button:hover{
@@ -137,10 +153,22 @@ h2{
     transition: all 0.4s ease;
 }
 
-
-.form_select > option{
+.form_select{
+    box-sizing: border-box;
+    width: 187px;
+    border: 1px solid #BEBEBE;
+    border-radius: 10px;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #212121;
+    padding:  16px 24px 16px 24px;
+    outline: none;
+}
+
+.form_select select option:hover{  
+    background-color: #9E1419;
+}
+
+.form_select:active{
+    outline: red;
 }
