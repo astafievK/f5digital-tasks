@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: black;
+}
+
+header{
+    height: 133px;
+    background: linear-gradient(180deg, rgba(11,18,32,1) 0%, rgba(0,0,0,0) 100%)
+}
+
+nav{
+    max-height: 133px;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 48px 101px 55px 56px;
+    border: 1px white solid;
+}
+
+nav ul> li{
+    display: inline-block;
+}
+
+nav > img{
+    max-width: 136px;
+    max-height: 30px;
+}
+
+nav > .item-left{
+    align-self: flex-start;
+}
+nav > .item-center{
+    align-content: center;
+}
+nav > .item-right{
+    align-self: flex-end
+}
