@@ -33,7 +33,7 @@ for (let i = 0; i < ratingItems.length; i++) {
 
     stars.forEach(function(star) {
         star.addEventListener('mouseenter', function() {
-            for (let j = 0; j <= star.getAttribute('data-id') - 1; j++) {
+            for (let j = 0; j <= star.getAttribute('id') - 1; j++) {
                 stars[j].setAttribute('src', 'images/star filled.svg');
             }
         });

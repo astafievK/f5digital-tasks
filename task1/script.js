@@ -1,33 +1,25 @@
+window.onload = init;
+function init() {
+    var button = document.getElementById("sendResume");
+    var buttonClose = document.getElementById("modalClose");
+    var modal = document.getElementById('modal')
+    button.onclick = handleButtonClick;
+    buttonClose.onclick = handelButtonCloseClick;
+}
+function handleButtonClick() {
+    modal.style.display = 'block';
+}
 
-$(document).ready(function() {
-    let formElement = $('.form_elem')
-    let formSelect = $('.form_select')
-    let clearButton = $('.clear_button')
+function handelButtonCloseClick() {
+    modal.style.display = 'none';
+}
 
-    $(clearButton).hide()
-    function checkForm() {
-        let formFilled = false
-        $('.form_elem').each(function() {
-            if ($(this).val() !== '' || $(this).is(':checked')) {
-                formFilled = true
-            }
-        })
+let inputElement = document.getElementById("lalala");
 
-        if (formFilled) {
-            $(clearButton).show()
-        } else {
-            $(clearButton).hide()
-        }
-    }
-
-    $(formElement).on('input', function() {
-        checkForm()
+if (inputElement) {
+    console.log("dasd");
+    inputElement.addEventListener("change", function() {
+        let spanElement = document.getElementById("input-file-name");
+        spanElement.textContent = inputElement.files[0].name;
     });
-
-    $(clearButton).on('click', function() {
-        $(formElement).val('')
-        $(formElement).prop('checked', false);
-        $(formSelect).val("def")
-        $('.clear_button').hide()
-    });
-});
+}

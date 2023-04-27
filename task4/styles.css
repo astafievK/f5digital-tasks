@@ -1,7 +1,14 @@
 *{
     padding: 0;
     margin: 0;
+    text-decoration: none;
+    text-underline: none;
 }
+
+a{
+    text-decoration: none;
+}
+
 
 body{
     background: black;
@@ -20,7 +27,11 @@ nav{
     border: 1px white solid;
 }
 
-nav ul> li{
+nav ul > li{
+    display: inline-block;
+}
+
+nav > ul li{
     display: inline-block;
 }
 
@@ -30,11 +41,11 @@ nav > img{
 }
 
 nav > .item-left{
-    align-self: flex-start;
+    justify-content: start;
 }
 nav > .item-center{
-    align-content: center;
+    justify-content: center;
 }
 nav > .item-right{
-    align-self: flex-end
+    justify-content: end;
 }
