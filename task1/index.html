@@ -30,24 +30,21 @@
 
         <div class="modal" id="modal">
             <div class="modal-window">
-                <button class="modal_close" id="modalClose">x</button>
                 <p class="modal-title">Отправить резюме</p>
                 <div class="modal-input">
                     <input class="modal-input-item" type="text" placeholder="Ваше ФИО">
                     <input class="modal-input-item" type="text" placeholder="Ваш телефон">
                     <input class="modal-input-item" type="text" placeholder="Ваш e-mail">
-                    <div>
-                        <label class="input-file" id="lalala">
+                        <label class="input-file" id="input-file">
                             <input class="modal-input-item" id="inputFile" type="file" placeholder="Прикрепить файл">
-                            <span id="input-file-name">Прикрепить файл <img src="/images/file-input.svg" alt=""> </span>
+                            <span id="input-file-name">Прикрепить файл<img src="images/file-input.svg" alt=""></span>
                         </label>
-                    </div>
                     <button class="modal-input-item send">Отправить</button>
                 </div>
             </div>
 
-            <div class="overlay">
-
+            <div class="overlay" id="overlay">
+                <button class="modal_close" id="modalClose"><img src="images/close-button.svg"></button>
             </div>
         </div>
     </div>
