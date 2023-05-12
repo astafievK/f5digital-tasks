@@ -10,4 +10,3 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo 'Ошибка: ' . $sql . '<br>' . mysqli_error($conn);
 }
-?>

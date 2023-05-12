@@ -25,12 +25,14 @@ input[type="text"]{
 }
 
 div.main{
+    background: url("images/background-image.svg") no-repeat top right;
     width: 100%;
     min-height: 692px;
     border-bottom: 6px solid #2B427E;
 }
 
 .background_image{
+    display: none;
     position: relative;
     float: right;
     z-index: -1;
@@ -46,7 +48,6 @@ h1{
     line-height: 66px;
     color: #121212;
 }
-
 
 p{
     font-weight: 500;
@@ -106,13 +107,27 @@ button:active{
     background: #1C2A50;
 }
 
+.modal-back{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 525px;
+    height: 621px;
+    z-index: 9999;
+    background: transparent;
+}
+
 .modal{
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.overlay{
+    z-index: 9998;
 }
 
 .modal .overlay{
@@ -130,10 +145,9 @@ input, .modal-window, button.send, #sendResume{
 }
 
 .modal-window{
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
     z-index: 9999;
     width: 461px;
     height: 581px;
@@ -142,14 +156,10 @@ input, .modal-window, button.send, #sendResume{
 }
 
 #modalClose{
-    position: relative;
-    font-size: 17px;
-    color: #000000;
+    float: right;
     background: transparent;
     opacity: 0.75;
     cursor: pointer;
-    left: 70%;
-    top: 15%;
 
     transition: all 0.2s;
 }
@@ -174,8 +184,8 @@ input, .modal-window, button.send, #sendResume{
 }
 
 input[type="text"], .input-file {
-    width: 365px;
-    height: 57px;
+    max-width: 365px;
+    max-height: 57px;
     border: 1px solid #E8E8E8;
     margin-bottom: 20px;
     background: #F4F4F4;
@@ -212,10 +222,9 @@ input[type="text"]:active{
     text-align: center;
 }
 
-
-
 .modal-input > button.send{
     height: 57px;
+    max-width: 365px;
     font-size: 18px;
     font-weight: 700;
 }

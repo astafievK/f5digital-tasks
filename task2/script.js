@@ -38,12 +38,12 @@ $(document).ready(function() {
     let searchIcon = $('.search_icon')
 
     $(searchField).on('hover', function(){
-        $(inputText).css('color', '#212121');
+        $(searchField).css('border-color', '#212121');
         $(searchIcon).css('opacity', '1');
     });
 
-    $(inputText).on('active', function(){
-        $(inputText).css('color', '#212121');
+    $(searchField).on('active', function(){
+        $(searchField).css('border-color', '#212121');
         $(searchIcon).css('opacity', '1');
     });
 

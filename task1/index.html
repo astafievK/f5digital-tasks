@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -8,15 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>task1</title>
+    <title>Задание 1</title>
 </head>
 <body>
     <div class="main">
-        <img class="background_image" src="images/background-image.svg">
         <div class="main_content container">
-            <div class="col-8">
+            <div class="col-xl-8 col-lg-8 col-md-7 col-sm-5">
                 <h1>Нет подходящей вакансии?</h1>
-                <p class="above">Если вы не нашли в списке подходящей вакансии, то можете отправить нам своё резюме.
+                <p class="above">
+                    Если вы не нашли в списке подходящей вакансии, то можете отправить нам своё резюме.
                     Мы рассмотрим его в ближайшее время.</p>
                 <p class="bottom">Заявить о себе можно несколькими способами:</p>
                 <ul>
@@ -29,23 +29,23 @@
         </div>
 
         <div class="modal" id="modal">
-            <div class="modal-window">
-                <p class="modal-title">Отправить резюме</p>
-                <div class="modal-input">
-                    <input class="modal-input-item" type="text" placeholder="Ваше ФИО">
-                    <input class="modal-input-item" type="text" placeholder="Ваш телефон">
-                    <input class="modal-input-item" type="text" placeholder="Ваш e-mail">
+            <div class="modal-back">
+                <button class="modal_close" id="modalClose"><img src="images/close-button.svg" alt=""></button>
+                <div class="modal-window">
+                    <p class="modal-title">Отправить резюме</p>
+                    <div class="modal-input">
+                        <input class="modal-input-item" type="text" placeholder="Ваше ФИО">
+                        <input class="modal-input-item" type="text" placeholder="Ваш телефон">
+                        <input class="modal-input-item" type="text" placeholder="Ваш e-mail">
                         <label class="input-file" id="input-file">
                             <input class="modal-input-item" id="inputFile" type="file" placeholder="Прикрепить файл">
-                            <span id="input-file-name">Прикрепить файл<img src="images/file-input.svg" alt=""></span>
+                            <span id="input-file-name">Прикрепить файл<img src="images/file-input.svg" id="file-name-image" alt=""></span>
                         </label>
-                    <button class="modal-input-item send">Отправить</button>
+                        <button class="modal-input-item send">Отправить</button>
+                    </div>
                 </div>
             </div>
-
-            <div class="overlay" id="overlay">
-                <button class="modal_close" id="modalClose"><img src="images/close-button.svg"></button>
-            </div>
+            <div class="overlay" id="overlay"></div>
         </div>
     </div>
 </body>

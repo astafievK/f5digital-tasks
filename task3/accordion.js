@@ -34,13 +34,13 @@ for (let i = 0; i < ratingItems.length; i++) {
     stars.forEach(function(star) {
         star.addEventListener('mouseenter', function() {
             for (let j = 0; j <= star.getAttribute('id') - 1; j++) {
-                stars[j].setAttribute('src', 'images/star filled.svg');
+                stars[j].setAttribute('src', 'images/star-filled.svg');
             }
         });
 
         star.addEventListener('mouseleave', function() {
             stars.forEach(function(star) {
-                star.setAttribute('src', 'images/star empty.svg');
+                star.setAttribute('src', 'images/star-empty.svg');
             });
         });
     });
