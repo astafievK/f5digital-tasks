@@ -1,0 +1,356 @@
+@import "../assets/fonts";
+
+@font-face {
+    font-family: "Parangon 530C";
+    src: url(../assets/fonts/Parangon420C.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+button{
+    background-color: transparent;
+}
+
+header{
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding-top: 39px;
+}
+
+header > div > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > div{
+    padding: 0 !important;
+}
+
+header > div > div > label{
+    padding: 0 !important;
+}
+
+body{
+    padding-bottom: 162px;
+}
+
+.check{
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+.check > .custom_check_title{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: 17px;
+}
+
+.real_check{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+.custom_check{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #000000;
+    position: relative;
+
+    transition: all 0.4s;
+}
+
+.custom_check::before{
+    display: inline-block;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 14px;
+    height: 14px;
+    background-color: #000000;
+    border-right: 2px;
+
+    transition: 0.1s ease-in;
+}
+
+.real_check:checked + .custom_check::before{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#accept{
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    background-color: #087A28;
+    max-width: 143px;
+    max-height: 31px;
+    padding: 7px 11px 10px 12px;
+}
+
+.product_image{
+    display: flex;
+    position: relative;
+}
+
+.product_image > img{
+    width: 100%;
+}
+
+.status-top, .status-promo, .status-new{
+    display: flex;
+    color: #FFF;
+    padding: 4px 7px 4px 7px;
+    font-family: 'Parangon 530C', sans-serif;
+    align-items: center;
+    font-weight: 400;
+    font-size: 8px;
+    margin-top: 15px;
+    margin-left: 15px;
+    left: 0;
+    z-index: 2;
+}
+
+.status-top, .status-promo, .status-new, .in-stock{
+    position: absolute;
+}
+
+.in-stock{
+    display: flex;
+    font-family: 'Arial Rounded', sans-serif;
+    color: #4F493F;
+    background-color: #FFFFFF;
+    font-weight: 400;
+    font-size: 8px;
+    padding: 3px 6px 1px 6px;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.in-stock:before{
+    content: url("images/in-stock.svg");
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+.status-top{
+    background-color: #A32018;
+}
+
+.status-top:before{
+    content: url("images/top.svg");
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+.status-promo{
+    background-color: #E0CD1C;
+}
+
+.status-promo:before{
+    content: url("images/promo.svg");
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+.status-new{
+    background-color: #087A28;
+}
+
+.status-new:before{
+    content: url("images/new.svg");
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+.card-wrapper{
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.card-wrapper:nth-child(3n+2) > .card{
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card-wrapper:nth-child(3n+3) > .card{
+    float: right;
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 90%;
+
+    transition: all 0.25s;
+}
+
+.card:hover{
+    -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.25s;
+}
+
+.content{
+    margin-top: 39px;
+}
+
+.product_description{
+    font-family: "Arial Rounded", sans-serif;
+    background-color: #EFF5F5;
+    padding: 15px 12px 15px 12px;
+}
+
+.product_description > div.row > span:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.category{
+    color: #6E6659;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.title{
+    color: #264E58;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.code_title{
+    color: #A5A5A5;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.code_title > .code{
+    color: #264E58;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.price_title{
+    color: #A5A5A5;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.price_title > .price{
+    color: #6E6659;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 17px;
+}
+
+#showMore{
+    display: block;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    background: #50B9B9;
+    height: 53px;
+    width: 289px;
+    border-radius: 6px;
+    margin: 22px auto 0;
+}
+
+@media (max-width: 767px) {
+    header > div > div.row > label{
+        display: flex;
+        justify-content: center;
+    }
+
+    header > div > div.row{
+        justify-content: center;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    #accept{
+        margin-top: 39px;
+    }
+
+    header > div > div.row > label:nth-child(3), label:nth-child(4){
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    @media (max-width: 991px) {
+        header > div > div.row > label, button{
+            display: flex;
+            justify-content: center;
+        }
+
+        header > div > div.row{
+            justify-content: center;
+        }
+
+        #accept{
+            margin-top: 39px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    @media (max-width: 1199px) {
+        .card-wrapper:nth-child(2n+1) > .card{
+            float: left;
+            left: 0;
+            transform: none;
+        }
+
+        .card-wrapper:nth-child(2n+2) > .card{
+            float: right;
+            left: 0;
+            transform: none;
+        }
+
+        .card{
+            width: 96%;
+        }
+    }
+}
+
+
+@media (max-width: 1199px) {
+    #showMore{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card{
+        width: 95%;
+    }
+}

@@ -149,8 +149,6 @@ input, .modal-window, button.send, #sendResume{
     bottom: 0;
     left: 0;
     z-index: 9999;
-    width: 461px;
-    height: 581px;
     background: #FFFFFF;
     padding: 48px;
 }
@@ -224,14 +222,11 @@ input[type="text"]:active{
 
 .modal-input > button.send{
     height: 57px;
-    max-width: 365px;
     font-size: 18px;
     font-weight: 700;
 }
 
 .input-file{
-    width: 365px;
-    height: 57px;
     background-color: #FFFFFF;
     margin-bottom: 48px;
 }
@@ -249,16 +244,14 @@ input[type="text"]:active{
 }
 
 .input-file span {
-    display: block;
+    display: flex;
     position: relative;
     cursor: pointer;
     font-size: 18px;
     color: #2B427E;
-    text-align: center;
-    vertical-align: middle;
-    width: 100%;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .input-file span img{

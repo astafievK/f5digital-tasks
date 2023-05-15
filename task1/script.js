@@ -26,6 +26,4 @@ function updateName() {
     let image = document.getElementById('file-name-image')
     image.style.display = "none";
     inputFileLabel.innerHTML = fileName;
-
-
 }

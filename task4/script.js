@@ -1,11 +1,18 @@
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
-
 new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
     slidesPerView: 1,
+    centeredSlides: true,
+    spaceBetween: -150,
+    effect: 'coverflow' ,
 
-    // Navigation arrows
+
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 70,
+        shadow: false,
+    },
+
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
