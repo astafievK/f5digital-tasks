@@ -1,30 +1,19 @@
-// Открытие текста аккордеона
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+const accordionContents = document.querySelectorAll('.accordion-content');
 
-var headers = document.querySelectorAll('.accordion-header');
-var contents = document.querySelectorAll('.accordion-content');
-
-headers.forEach(function(header) {
-    header.addEventListener('click', function() {
-        var value = this.getAttribute('value');
-
-        contents.forEach(function(content) {
-            if (content.getAttribute('value') === value) {
-                if (content.classList.contains('show')) {
-                    content.classList.remove('show');
-                } else {
-                    contents.forEach(function(c) {
-                        c.classList.remove('show');
-                    });
-                    content.classList.add('show');
-                }
-            } else {
-                content.classList.remove('show');
+for (let i = 0; i < accordionHeaders.length; i++) {
+    accordionHeaders[i].addEventListener('click', function() {
+        for (let j = 0; j < accordionContents.length; j++) {
+            if (accordionContents[j].classList.contains('show') && accordionContents[j] !== accordionHeaders[i].nextElementSibling) {
+                accordionContents[j].classList.remove('show');
+                accordionHeaders[j].classList.remove('opened');
             }
-        });
+        }
+        const accordionContent = accordionHeaders[i].nextElementSibling;
+        accordionContent.classList.toggle('show');
+        accordionHeaders[i].classList.toggle('opened');
     });
-});
-
-// Строка звезд для рейтинга при наведении
+}
 
 let ratingItems = document.getElementsByClassName('rating-items');
 

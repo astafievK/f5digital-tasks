@@ -28,28 +28,48 @@
                 <button id="sendResume">Отправить резюме</button>
             </div>
         </div>
+    </div>
 
-        <div class="modal" id="modal">
-            <div class="modal-back">
-                <button class="modal_close" id="modalClose"><img src="images/close-button.svg" alt=""></button>
-                <div class="modal-window">
-                    <p class="modal-title">Отправить резюме</p>
-                    <div class="modal-input">
-                        <input class="modal-input-item" type="text" placeholder="Ваше ФИО">
-                        <input class="modal-input-item" type="text" placeholder="Ваш телефон">
-                        <input class="modal-input-item" type="text" placeholder="Ваш e-mail">
-                        <label class="input-file" id="input-file">
-                            <input class="modal-input-item" id="inputFile" type="file" placeholder="Прикрепить файл">
-                            <span id="input-file-name">Прикрепить файл<img src="images/file-input.svg" id="file-name-image" alt=""></span>
-                        </label>
-                        <button class="modal-input-item send">Отправить</button>
-                    </div>
+    <div class="modal" id="modal">
+        <div class="overlay" id="overlay"></div>
+
+        <div class="window-wrapper">
+            <button id="closeModal"></button>
+            <div class="window container-fluid">
+                <div class="row">
+                    <div class="modal_title">Отправить резюме</div>
+                </div>
+                <div class="row">
+                    <label class="modal-input-text">
+                        <input type="text" placeholder="Ваше ФИО">
+                    </label>
+                </div>
+                <div class="row">
+                    <label class="modal-input-text">
+                        <input type="text" placeholder="Ваш телефон">
+                    </label>
+                </div>
+                <div class="row">
+                    <label class="modal-input-text">
+                        <input type="text" placeholder="Ваш e-mail">
+                    </label>
+                </div>
+                <div class="row">
+                    <label class="modal-input-file">
+                        <input class="input-file-real" id="inputFile" type="file">
+                        <span class="input-content-wrapper">
+                            <span id="inputFileName">Прикрепить файл</span>
+                            <img id="inputFileImage" src="images/file-input.svg" alt="">
+                        </span>
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="send">Отправить</div>
                 </div>
             </div>
-            <div class="overlay" id="overlay"></div>
         </div>
     </div>
-    <script src="script.js"></script>
 
+    <script src="script.js"></script>
 </body>
 </html>

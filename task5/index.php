@@ -135,7 +135,7 @@ function checkProductStatusAsSpan($status, $count):void{
         }
     ?>
     <div class="row">
-        <button type="button" id="showMore">Показать еще</button>';
+        <button type="button" id="showMore">Показать еще</button>
     </div>
 </div>
 <script src="script.js" type="module"></script>

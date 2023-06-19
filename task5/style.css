@@ -145,6 +145,7 @@ body{
 }
 
 .in-stock:before{
+    display: flex;
     content: url("images/in-stock.svg");
     background-repeat: no-repeat;
     margin-right: 5px;

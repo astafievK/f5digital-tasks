@@ -4,6 +4,7 @@
     margin: 0;
     background: none;
     border: none;
+    box-sizing: border-box;
 }
 
 input{
@@ -37,12 +38,10 @@ h2{
     border: 2px solid #3F5EFF;
     border-radius: 10px;
     max-width: 720px;
-    min-height: 234px;
 }
 
 .form_content{
     padding: 30px 49px 30px 49px;
-    display: block;
 }
 
 .check{
@@ -78,7 +77,6 @@ h2{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    display: block;
     width: 10px;
     height: 10px;
     background-color: #052842;
@@ -146,14 +144,10 @@ h2{
     height: 20px;
 }
 
-div.search{
+.search{
     display: flex;
-    height: 58px;
     width: 100%;
     margin-top: 24px;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 19px;
     border: 1px solid #BEBEBE;
     border-radius: 10px;
     flex-direction: row;
@@ -165,11 +159,11 @@ div.search{
     transition: all 0.4s ease;
 }
 
-div.search:hover{
+.search:hover{
     border-color: #212121;
 }
 
-div.search:hover{
+.search:hover{
     border-color: #212121;
 }
 
@@ -190,19 +184,13 @@ div.search:hover + .search_icon{
 .search_text{
     height: 100%;
     width: 100%;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 19px;
 }
 
 .input_group_lists{
     margin-top: 24px;
-}
-
-.form_select{
-    appearance: none;
-}
-
-.form_select, .submit_button{
-    height: 58px;
-    width: 187px;
 }
 
 .input_group_lists > div > select{
@@ -225,34 +213,104 @@ div.search:hover + .search_icon{
     transition: all 0.4s ease;
 }
 
-.form_select{
-    box-sizing: border-box;
-    border: 1px solid #BEBEBE;
+.search, .submit_button{
+    height: 52px;
+}
+
+.submit_button{
+    width: 100%;
+}
+
+.choices{
+    height: 52px;
+    width: 187px;
+}
+
+.choices.is-open + .choices__inner{
+    border-color: #212121;
+}
+
+.is-open.is-flipped .choices__inner, .is-open .choices__inner{
     border-radius: 10px;
+}
+
+.choices__inner{
+    display: flex;
+    align-items: center;
     font-weight: 400;
     font-size: 18px;
-    line-height: 21px;
-    padding:  16px 24px 16px 24px;
-    outline: none;
+    height: 100%;
+    border: 1px solid #BEBEBE;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding-left: 24px;
+    padding-right: 65px;
 
-    transition: all 0.4s;
+    transition: border-color 0.4s;
 }
 
-.form_select:hover{
+.choices__inner:hover, .choices__inner:active{
     border-color: #212121;
+
+    transition: border-color 0.4s;
 }
 
-.form_select:active{
-    border-color: #212121;
+.choices[data-type*=select-one]:after{
+    height: 8px;
+    width: 8px;
+    top: 40%;
+    border-color: #828282;
+    border-width: 0 0 2px 2px;
+    transform: rotate(-45deg);
+    margin-right: 10px;
 }
 
-option.select_item{
+.choices[data-type*=select-one].is-open:after{
+    top: 60%;
+    border-color: #9E1419;
+    border-width: 0 0 2px 2px;
+    transform: rotate(135deg);
+}
+
+.choices__list--dropdown, .choices__list[aria-expanded]{
+    padding: 24px;
+    min-width: 316px;
+    margin-top: 4px;
+}
+
+.choices__list--dropdown > .choices__list > .choices__item--selectable{
     padding: 8px 16px 8px 16px;
+    color: #212121;
 }
 
-option.select_item:active{
-    background-color: #9E1419;
+.choices__list--dropdown.is-active{
+    box-shadow: 0 2px 60px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 9px;
+    border: 0;
 }
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted{
+    color: #FFFFFF;
+    background: #9E1419;
+}
+
+.choices__list--dropdown .choices__item--selectable,
+.choices__list[aria-expanded] .choices__item--selectable{
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #212121;
+}
+
+.choices__placeholder{
+    opacity: 1;
+}
+
+.choices__list--dropdown .choices__placeholder {
+    display: none;
+}
+
 
 @media (max-width: 768px) {
     .clear_button{
@@ -261,21 +319,14 @@ option.select_item:active{
         justify-content: center;
     }
 
-    .form_check_elem{
-        display: flex;
-        justify-content: center;
-    }
-
-    .input_group_lists > div > button{
+    .select_wrapper > div.choices{
         width: 100%;
-    }
-
-    .input_group_lists > div{
         margin-bottom: 24px;
     }
 
-    .input_group_lists > div:last-child{
-        margin-bottom: 0;
+    .form_check_elem{
+        display: flex;
+        justify-content: center;
     }
 
     .main_screen{
@@ -297,13 +348,6 @@ option.select_item:active{
         margin-top: 12px;
     }
 
-    .input_group_lists{
-        margin-top: 12px;
-    }
-
-    .input_group_lists > div{
-        margin-bottom: 12px;
-    }
 
     div.search{
         margin-top: 12px;

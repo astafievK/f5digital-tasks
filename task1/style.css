@@ -4,6 +4,7 @@
     text-decoration: none;
     font-family: 'Manrope', sans-serif;
     font-style: normal;
+    box-sizing: border-box;
 }
 
 button {
@@ -92,176 +93,145 @@ ul > li > p{
     line-height: 25px;
 }
 
-button{
+#sendResume{
     background: #2B427E;
     color: #FFFFFF;
     transition: all 0.3s;
 }
 
-button:hover{
+#sendResume:hover, .send:hover{
     background: #3E5EB1;
     transition: all 0.3s;
 }
 
-button:active{
+#sendResume:active, .send:active{
     background: #1C2A50;
 }
 
-.modal-back{
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 525px;
-    height: 621px;
-    z-index: 9999;
-    background: transparent;
-}
-
 .modal{
-    position: absolute;
+    display: none;
+    position: fixed;
+    z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 .overlay{
-    z-index: 9998;
-}
-
-.modal .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     height: 100%;
-    background: #000000;
-    opacity: 0.65;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-input, .modal-window, button.send, #sendResume{
-    border-radius: 2px !important;
-}
-
-.modal-window{
+.window-wrapper{
     position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 9999;
-    background: #FFFFFF;
+    max-width: 525px;
+    max-height: 621px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+}
+
+.window{
+    position: relative;
+    max-width: 461px;
+    max-height: 581px;
+    background-color: #FFFFFF;
     padding: 48px;
 }
 
-#modalClose{
-    float: right;
-    background: transparent;
-    opacity: 0.75;
-    cursor: pointer;
-
-    transition: all 0.2s;
+#closeModal{
+    display: flex;
+    margin-left: auto;
+    margin-right: -24px;
+    transform: translateX(100%);
+    background-color: transparent;
+    background-image: url("images/close-button.svg");
+    width: 40px;
+    height: 40px;
 }
 
-#modalClose:hover{
-    opacity: 1;
-
-    transition: all 0.2s;
-}
-
-.modal-title{
-    font-size: 32px;
+.modal_title{
     font-weight: 700;
+    font-size: 32px;
     line-height: 44px;
-    color: #121212;
     text-align: center;
+    color: #121212;
     margin-bottom: 48px;
 }
 
-.modal-input{
-    display: grid;
-}
-
-input[type="text"], .input-file {
-    max-width: 365px;
-    max-height: 57px;
-    border: 1px solid #E8E8E8;
-    margin-bottom: 20px;
-    background: #F4F4F4;
-    color: #000000;
-    font-size: 18px;
+.modal-input-text, .modal-input-file, .send{
     font-weight: 500;
-    padding: 16px 20px 16px 20px;
-
-    transition: all 0.2s;
-}
-
-input[type="text"]:hover{
-    border-color: #858585;
-
-    transition: all 0.2s;
-}
-
-input[type="text"]:active{
-    border-color: #858585;
-
-    transition: all 0.2s;
-}
-
-.modal-input > div > label[for="inputFile"]{
+    font-size: 18px;
+    border: 1px solid #E8E8E8;
+    border-radius: 2px;
     width: 365px;
     height: 57px;
-    background: white;
-    border: 1px solid #E8E8E8;
-    color: #2B427E;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-bottom: 48px;
-    text-align: center;
 }
 
-.modal-input > button.send{
-    height: 57px;
-    font-size: 18px;
-    font-weight: 700;
+.modal-input-text{
+    padding: 16px 20px 16px 20px;
+    background-color: #F4F4F4;
+    margin-bottom: 20px;
 }
 
-.input-file{
-    background-color: #FFFFFF;
-    margin-bottom: 48px;
+.modal-input-text::placeholder{
+    color: #777777;
 }
 
-.input-file:hover{
+.modal-input-text:hover, .modal-input-file:hover{
     border-color: #858585;
-
-    transition: all 0.2s;
 }
 
-.input-file:active{
+.modal-input-text:focus, .modal-input-file:focus{
     border-color: #858585;
-
-    transition: all 0.2s;
 }
 
-.input-file span {
+.modal-input-text:active, .modal-input-file:active{
+    border-color: #858585;
+}
+
+.modal-input-file{
+    margin-bottom: 48px;
     display: flex;
-    position: relative;
-    cursor: pointer;
-    font-size: 18px;
-    color: #2B427E;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    align-items: center;
 }
 
-.input-file span img{
+#inputFileName{
+    color: #2B427E;
+    display: flex;
+    align-items: center;
+}
+
+#inputFileImage{
     margin-left: 16px;
 }
-.input-file input[type=file] {
+
+.input-file-real{
     position: absolute;
     z-index: -1;
-    opacity: 0;
-    display: block;
-    width: 0;
-    height: 0;
+}
+
+.input-content-wrapper{
+    display: flex;
+    position: relative;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.send{
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2B427E;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+
+    color: #FFFFFF;
 }

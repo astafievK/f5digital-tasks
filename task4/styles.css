@@ -145,6 +145,8 @@ button.watch-now{
     max-height: 56px;
     max-width: 193px;
     padding: 14px 38px 14px 22px;
+    display: inline-flex;
+    align-items: center;
 }
 
 button.watch-now > img{
@@ -159,28 +161,57 @@ button.trailer{
     padding: 13px 31px 13px 31px;
 }
 
-/*
-.slider{
-    transform: translateY(25%);
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right{
+    background: none;
 }
 
-.slider > .navigation{
-    position: relative;
+.swiper-button-prev{
+    left: auto;
+    right: 60px;
+    margin-right: 20px;
 }
 
-.slider > .navigation{
-    position: relative;
+.swiper-button-next{
+    right: 0;
 }
 
-.slider > img.left, img.right{
-    transform: scale(1.32);
+.swiper-button-next,
+.swiper-button-prev{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 9px 14px;
+    top: 30px;
+    border: 3px solid transparent;
+    transition: all 0.3s;
 }
 
-.slider > .front{
-    position: relative;
-    transform: scale(1.75);
-    z-index: 2;
-    border: 4px solid rgba(250, 71, 118, 0.5);
-    border-radius: 24px;
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+    border-color: #FA4776;
+    transition: all 0.3s;
 }
-*/
+
+.swiper-button-next:after,
+.swiper-button-prev:after{
+    display: inline-block;
+    content: "";
+    width: 25px;
+    height: 20px;
+    border-top: 7px solid #000000B2;
+    border-right: 7px solid #000000B2;
+    border-radius: 5px;
+    transition: ass 0.2s;
+}
+
+.swiper-button-next:after{
+    transform: translateX(-20%) rotate(45deg);
+}
+
+.swiper-button-prev:after{
+    transform: translateX(20%) rotate(-135deg);
+}
+
+.swiper-slide > img{
+    width: 100%;
+}

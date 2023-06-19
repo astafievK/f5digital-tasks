@@ -1,32 +1,28 @@
 $(document).ready(function() {
-    // обработка input'в
-    let formElement = $('.form_elem'); // все input'ы сразу
-    let formSearch = $('.search_text'); // строка поиска
-    let formSelect = $('.form_select'); // выпадающие списки
-    let clearButton = $('.clear_button'); // кнопка сброса состояний
+    let element = $('.form_elem');
+    let clearButton = $('.clear_button');
 
-    $(clearButton).hide();
+    $(clearButton).hide()
 
     function checkForm() {
         let formFilled = false;
 
-        $('.form_elem').each(function() {
-            if ($(this).val() !== null || $(this).is(':checked') || $(this).val() !== 'Цвет')
+        $(element).each(function() {
+            if ($(this).val() !== null || $(this).is(':checked') || $(this).val() !== '')
                 formFilled = true;
         });
 
         formFilled ? $(clearButton).show() : $(clearButton).hide();
     }
 
-    $(formElement).on('input', function() {
+    $(element).on('input', function() {
         checkForm();
     });
 
     $(clearButton).on('click', function() {
-        $(formElement).val(null);
-        $(formElement).prop('checked', false);
-        $(formSelect).val("def");
-        $(formSearch).val(null);
+        $(element).prop('checked', false);
+        $(element).val("");
+        $(element).val(null);
         $('.clear_button').hide();
     });
 
@@ -35,7 +31,7 @@ $(document).ready(function() {
 
     let searchField = $('.search');
     let inputText = $('.search_text');
-    let searchIcon = $('.search_icon')
+    let searchIcon = $('.search_icon');
 
     $(searchField).on('hover', function(){
         $(searchField).css('border-color', '#212121');
@@ -56,4 +52,8 @@ $(document).ready(function() {
         $(searchField).css('border-color', '#BEBEBE');
         $(searchIcon).css('opacity', '0.5');
     });
+
+    $('.choices').on('.is-open', function () {
+        $('.choices__inner').css('border-color', "#212121")
+    })
 });

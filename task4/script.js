@@ -3,7 +3,6 @@ new Swiper('.swiper', {
     loop: true,
     slidesPerView: 1,
     centeredSlides: true,
-    spaceBetween: -150,
     effect: 'coverflow' ,
 
 

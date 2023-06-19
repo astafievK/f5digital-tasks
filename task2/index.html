@@ -11,15 +11,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="../assets/libraries/choices/css/choices.min.css" />
     <link rel="stylesheet" href="style.css">
 
     <title>Задание 2</title>
 </head>
 <body>
     <div class="container main_screen">
-        <span class="row"><h1>Bring it all together</h1></span>
+        <h1>Bring it all together</h1>
             
-        <span class="row"><h2>The fastest way to combine your favorite tools and APIs to build the<br>fastest sites, stores, and apps for the web.</h2></span>
+        <h2>The fastest way to combine your favorite tools and APIs to build the<br>fastest sites, stores, and apps for the web.</h2>
         
         <div class="container form">
             <div class="form_content">
@@ -45,38 +46,40 @@
                     </div>
                 </div>
 
-                <div class="search" method="GET">
-                    <img class="search_icon" src="images/search.svg">
+                <div class="search form_elem" id="search">
+                    <img class="search_icon" src="images/search.svg" alt="">
                     <input type="text" class="form_elem search_text" id="formSearch" placeholder="Поиск по ключевым словам ...">
                 </div>
 
                 <div class="row input_group_lists">
-                    <div class="col-md-4 col-12 col-sm-12">
-                        <select class="form_elem form_select">
-                          <option class="select_item" selected disabled value="def">Цвет</option>
-                          <option class="select_item" value="blue">Синий</option>
-                          <option class="select_item" value="purple">Фиолетовый</option>
+                    <div class="select_wrapper col-md-4 col-12 col-sm-12">
+                        <select class="custom_select_color form_elem" id="selectColor">
+                          <option value="">Цвет</option>
+                          <option value="blue">Синий</option>
+                          <option value="purple">Фиолетовый</option>
+                        </select>
+                    </div>
+
+                    <div class="select_wrapper col-md-4 col-12 col-sm-12">
+                        <select class="custom_select_size form_elem" id="selectSize">
+                            <option value="">Размер</option>
+                            <option value="big">Большой</option>
+                            <option value="medium">Средний</option>
+                            <option value="small">Маленький</option>
                         </select>
                     </div>
 
                     <div class="col-md-4 col-12 col-sm-12">
-                        <select class="form_elem form_select">
-                            <option class="select_item" selected disabled value="def">Размер</option>
-                            <option class="select_item" value="big">Большой</option>
-                            <option class="select_item" value="medium">Средний</option>
-                            <option class="select_item" value="small">Маленький</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-4 col-12 col-sm-12">
-                        <button class="form_elem submit_button">Применить фильтр</button>
+                        <button class="submit_button">Применить фильтр</button>
                     </div>
                 </div>
             </div>           
         </div>
     </div>
 
+    <script src="../assets/libraries/choices/js/choices.min.js"></script>
     <script src="../assets/libraries/jquery-3.7.0.min.js"></script>
+    <script src="choices.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,15 +1,15 @@
 window.onload = init;
-let button = document.getElementById('sendResume');
-let buttonClose = document.getElementById('modalClose');
-let modalOverlay = document.getElementById('overlay')
+let modalOpenButton = document.getElementById('sendResume');
+let modalCloseButton = document.getElementById('closeModal');
+let overlay = document.getElementById('overlay')
 let modal = document.getElementById('modal')
 let fileInput = document.getElementById('inputFile')
-let inputFileLabel = document.getElementById('input-file-name')
+
 
 function init() {
-    button.onclick = showModal;
-    modalOverlay.onclick = closeModal;
-    buttonClose.onclick = closeModal;
+    modalOpenButton.onclick = showModal;
+    overlay.onclick = closeModal;
+    modalCloseButton.onclick = closeModal;
     fileInput.onchange = updateName;
 }
 
@@ -22,8 +22,9 @@ function closeModal() {
 }
 
 function updateName() {
-    let fileName = fileInput.value.split("\\").pop();
-    let image = document.getElementById('file-name-image')
+    let fileName = fileInput.files[0].name;
+    let inputFileLabel = document.getElementById('inputFileName')
+    let image = document.getElementById('inputFileImage')
     image.style.display = "none";
     inputFileLabel.innerHTML = fileName;
 }
